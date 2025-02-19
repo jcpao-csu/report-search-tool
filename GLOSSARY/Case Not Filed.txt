@@ -1,0 +1,5 @@
+Alternatively, if the Prosecuting Attorney's Office does not find the suspect guilty *beyond a reasonable doubt* following review of the evidence and facts of the case, it will decline to file charges in Court. Common reasons to decline filing charges include:
+* Insufficient evidence to prove guilt *beyond a reasonable doubt*
+* Referred to Other Jurisdiction
+* Self-Defense
+* **Pending Further Investigation** (prosecutor returns case to the submitting agency to gather additional evidence prior to making a filing decision)

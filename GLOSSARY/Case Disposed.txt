@@ -1,0 +1,5 @@
+The case is closed. Common disposition outcomes include: 
+* Guilty plea
+* (Non-)Guilty verdict from trial
+* Defendant entered diversion program
+* **Nolle prosequi** (prosecutor dismisses criminal charges)
