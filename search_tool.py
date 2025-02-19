@@ -17,7 +17,7 @@ df = pd.read_csv("JCPAO Data_01312025.csv", encoding='utf-8')
 
 report_number = st.text_input(label="Enter your Police Report Number", label_visibility="hidden")
 
-if st.button("Search"):
+if st.button("Search", icon=":material/search:"):
     if len(report_number) >= 5: 
         result = df[df['Police Report Number'].str.contains(report_number, case=False, na=False)]
         if not result.empty:

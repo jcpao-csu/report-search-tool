@@ -1,0 +1,30 @@
+# Example config.toml file for Streamlit
+
+[general]
+# App Title
+title = "Police Report Search Tool"
+
+# Optional: The favicon for the Streamlit app
+favicon = "Logos/jcpao_logo.ico"
+
+# [theme] - playing around
+
+# primaryColor = "#f8cc9b"
+# backgroundColor = "#073364"
+# secondaryBackgroundColor = "#5bb1ff" "#87CEEB" "#2E8B57"
+# textColor = "#ffffff"
+
+[theme]
+primaryColor = "#FF4B4B"
+backgroundColor = "#FFFFFF"  # Light theme background color
+secondaryBackgroundColor = "#F0F0F0"
+textColor = "#000000"  # Light theme text color
+
+[theme.dark]
+primaryColor = "#FF4B4B"
+backgroundColor = "#0E1117"  # Dark theme background color
+secondaryBackgroundColor = "#262626"
+textColor = "#FFFFFF"  # Dark theme text color
+
+
+

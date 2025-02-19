@@ -8,7 +8,7 @@ More Info:      FAQs and Glossary definitions are created by adding .txt files t
 
 from pathlib import Path
 
-def faq_dict(path_str):
+def faq_dict(path_str='FAQ'):
     """Create dict for FAQs"""
     output_dict = {}
     faq_path = Path(path_str)
@@ -19,21 +19,21 @@ def faq_dict(path_str):
                 q_num = int(file[1:2])
                 if q_num not in output_dict:
                     output_dict[q_num] = {}
-                output_dict[q_num]['question'] = item.read_text() # Add question to sub-dict
+                output_dict[q_num]['question'] = item.read_text(encoding='utf-8') # Add question to sub-dict
             elif 'answer' in file: # Else if .txt contains answer 
                 q_num = int(file[1:2])
                 if q_num not in output_dict:
                     output_dict[q_num] = {}
-                output_dict[q_num]['answer'] = item.read_text() # Add answer to sub-dict
+                output_dict[q_num]['answer'] = item.read_text(encoding='utf-8') # Add answer to sub-dict
 
     return output_dict 
 
-def glossary_dict(path_str):
+def glossary_dict(path_str='GLOSSARY'):
     """Create dict for Glossary"""
     output_dict = {}
     glossary_path = Path(path_str)
     for item in list(glossary_path.iterdir()):
         if item.is_file() and item.suffix == '.txt':
-            output_dict[item.stem] = item.read_text() # Add glossary definition to dict
+            output_dict[item.stem] = item.read_text(encoding='utf-8') # Add glossary definition to dict
             
     return output_dict 
