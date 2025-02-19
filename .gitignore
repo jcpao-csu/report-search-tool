@@ -1,0 +1,5 @@
+# Ignore UPDATE directory (for updating database)
+UPDATE/
+
+# Ignore .csv files
+*.csv
