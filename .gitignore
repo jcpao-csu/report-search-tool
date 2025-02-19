@@ -4,5 +4,8 @@ UPDATE/
 # Ignore ARCHIVE directory
 ARCHIVE/
 
+# Ignore secrets.toml 
+.streamlit/secrets.toml
+
 # Ignore .csv files
 *.csv
