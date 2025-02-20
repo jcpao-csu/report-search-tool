@@ -1,19 +1,10 @@
 import streamlit as st
 import pandas as pd
-import os
-
-# Set paths
-home_path = os.getcwd()
-logo_path = home_path+r'\Logos'
 
 
-# st.image("Logos\jcpo logo_medium.png")
 st.title("Enter your Police Report Number")
-# st.caption("Results based on system data as of 2025-01-28")
 
-# df = pd.read_csv("Data\JCPAO Data_01312025.csv", encoding='utf-8')
-
-df = pd.read_csv("JCPAO Data_01312025.csv", encoding='utf-8')
+df = pd.read_csv("test.csv", encoding='utf-8')
 
 report_number = st.text_input(label="Enter your Police Report Number", label_visibility="hidden")
 
@@ -39,8 +30,8 @@ if st.button("Search", icon=":material/search:"):
                 elif row['Case Status'].upper()=='DISPOSED':
                     url = f"https://www.courts.mo.gov/cnet/cases/newHeader.do?inputVO.caseNumber={row['Court Number']}&inputVO.courtId=CT16&inputVO.isTicket=false"
                     st.write(f"Case ({counter}/{total_cases}) was :red[**DISPOSED**] on {row['Date Disposed']} with the following outcome(s): {row['Disposed Outcome']}.\nThis case was submitted by the {row['Submitting Agency']} for review on {row['Date Received']}.\nYou can find more information regarding this case on Case.net: [Court Number {row['Court Number']}]({url}).")
-            
-            st.dataframe(result)
+            cleaned = result.dropna(axis=1, how='all')
+            st.dataframe(cleaned, hide_index=True)
         else:
             st.write('''
                 We could not match your Police Report Number to those of any cases submitted to our Office. 
