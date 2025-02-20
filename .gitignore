@@ -8,4 +8,4 @@ ARCHIVE/
 .streamlit/secrets.toml
 
 # Ignore .csv files
-# *.csv
+*.csv
