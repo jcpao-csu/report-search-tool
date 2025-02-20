@@ -12,6 +12,6 @@ pages = {
 
 
 # st.sidebar.caption("Results based on system data as of 2025-01-28")
-pg = st.navigation(pages, position="hidden")
+pg = st.navigation(pages, position="hidden", expanded=True)
 
 pg.run()
