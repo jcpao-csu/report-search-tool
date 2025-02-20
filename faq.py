@@ -5,11 +5,13 @@ from helper_functions import faq_dict, glossary_dict
 
 # Import content 
 faqs = faq_dict('FAQ')
-faqs_keys = (list(faqs.keys())).sort()
+faqs_keys = list(faqs.keys())
+faqs_keys.sort()
 sorted_faqs = {q_num: faqs[q_num] for q_num in faqs_keys}
 
 glossary_terms = glossary_dict('GLOSSARY')
-glossary_keys = (list(glossary_terms.keys())).sort()
+glossary_keys = list(glossary_terms.keys())
+glossary_keys.sort()
 sorted_glossary = {term: glossary_terms[term] for term in glossary_keys}
 
 st.title("Frequently Asked Questions")
