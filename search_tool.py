@@ -1,10 +1,11 @@
 import streamlit as st
 import pandas as pd
 
+from db_connect import get_data
 
 st.title("Enter your Police Report Number")
 
-df = pd.read_csv("test.csv", encoding='utf-8')
+df = get_data()
 
 report_number = st.text_input(label="Enter your Police Report Number", label_visibility="hidden")
 
