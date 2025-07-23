@@ -6,7 +6,7 @@ from db_connect import get_data
 st.title("Enter your Police Report Number")
 
 df = get_data()
-df = df.drop("id", axis=1)
+# df = df.drop("id", axis=1)
 
 report_number = st.text_input(label="Enter your Police Report Number", label_visibility="hidden")
 
