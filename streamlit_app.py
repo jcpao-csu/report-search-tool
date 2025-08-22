@@ -1,4 +1,6 @@
 import streamlit as st
+import pandas as pd
+from db_connect import get_data
 
 pages = {
     "Police Report Search Tool": [
@@ -10,8 +12,13 @@ pages = {
     ],
 }
 
+# Return latest date
+df = get_data()
+df['Date Received'] = pd.to_datetime(df['Date Received'], format='%Y-%m-%d', errors='coerce')
+latest_date = df['Date Received'].max()
+latest_date = latest_date.strftime('%A, %B %#d, %Y')
 
-st.sidebar.caption("Results based on system data as of August 15, 2025.")
+st.sidebar.caption(f"Results based on system data as of {latest_date}.")
 pg = st.navigation(pages) # position="hidden", expanded=True
 
 pg.run()
