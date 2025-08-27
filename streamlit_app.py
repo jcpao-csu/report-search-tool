@@ -14,11 +14,17 @@ pages = {
 
 # Return latest date
 df = get_data()
-df['Date Received'] = pd.to_datetime(df['Date Received'], format='%Y-%m-%d', errors='coerce')
-latest_date = df['Date Received'].max()
-latest_date = latest_date.strftime('%A, %B %#d, %Y')
 
-st.sidebar.caption(f"Results based on system data as of {latest_date}.")
+try: # Code that might raise an exception
+    df['Date Received'] = pd.to_datetime(df['Date Received'], format='%Y-%m-%d', errors='coerce')
+except KeyError: # Code that runs if that exception occurs
+    latest_date = "..." # System error ... 
+else: # Code that runs if no exception was raised
+    latest_date = df['Date Received'].max()
+    latest_date = latest_date.strftime('%A, %B %#d, %Y')
+finally: # Code that runs no matter what (cleanup, logging, etc.)
+    st.sidebar.caption(f"Results based on system data as of {latest_date}.")
+
 pg = st.navigation(pages) # position="hidden", expanded=True
 
 pg.run()
